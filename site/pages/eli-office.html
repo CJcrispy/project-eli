@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eli's Office</title>
+    <link rel="stylesheet" href="../css/terminal.css" />
+</head>
+<body>
+
+    <header>
+        Eli Surveillance Terminal v3.4 (REDACTED)
+    </header>
+
+    <div id="main">
+        <div id="leftPanel">
+        <h3>[FOLDERS]</h3>
+        <div class="folder" onclick="revealLogs()">📂 Logs</div>
+        <div class="folder" onclick="revealClones()">📂 Clones</div>
+        <div class="folder locked" onclick="revealUnity()">📂 Operation UNITY (LOCKED)</div>
+        <div class="folder" onclick="playAudio()">📂 Audio (corrupted)</div>
+
+        <div class="cam-feed">
+            <div class="cam">CAM 01</div>
+            <div class="cam">CAM 02</div>
+            <div class="cam">CAM 03</div>
+            <div class="cam">CAM 04</div>
+        </div>
+        </div>
+
+        <div id="rightPanel">
+        <div class="terminal-window" id="terminalOutput">
+            > Welcome back, ELI.<br>
+            > Type `help` for available commands.<br>
+        </div>
+        <input type="text" id="commandInput" onkeydown="handleCommand(event)" placeholder="> █ Enter command...">
+        </div>
+    </div>
+
+    <!-- Placeholder content -->
+    <div id="logOutput" class="hidden">
+        [LOG FILE ACCESS GRANTED]<br />
+        [12:41:03] :: Initial clone sequence [#01] SUCCESSFUL.<br />
+        [12:42:50] :: Clone exhibited signs of memory bleed.<br>
+        [13:10:44] :: Clone began mimicking Discord messages of Host: JOE.<br>
+        [13:24:21] :: Subject "Joe" flagged for TERMINATION.<br>
+        [14:01:17] :: Failed attempt to isolate host file.<br>
+        [14:21:00] :: Unknown input detected...<br>
+        [14:21:05] :: ...they’re waking up.<br>
+    </div>
+      
+    <div id="cloneData" class="hidden">
+        [CLONE DIRECTORY: ELI-CLN01 through ELI-CLN05]<br><br>
+        > CLONE_01 – Stable – Deep mimicry enabled<br>
+        > CLONE_02 – Unstable – Discarded<br>
+        > CLONE_03 – [DATA CORRUPTED] – Last seen in #memes<br>
+        > CLONE_04 – Active – Monitoring “quinnknight”<br>
+        > CLONE_05 – Dormant – Activation pending terminal trigger...<br>
+    </div>
+      
+    <audio id="corruptedAudio" src="audio/corrupted_clip.mp3"></audio>
+
+
+    </div>
+    <script src="../js/pages/eli-office.js"></script>
+
+</body>
+</html>

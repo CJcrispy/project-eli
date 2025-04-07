@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project E.L.I. - Eyes. Lies. Incarnate.</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+  <!-- PROJECT E.L.I. - initiated by E.M. v0.6 -->
+  <!-- They are watching. You are being cloned. -->
+  <!-- 01000010 01010101 01001110 01001011 -->
+  <!-- hint: password = name of the first clone -->
+  <!-- shhhh, check Eli's old Discord messages -->
+
+  <h1>PROJECT E.L.I.</h1>
+  <h2>Eyes. Lies. Incarnate.</h2>
+
+  <div id="terminal">
+    <p>ENTER CLEARANCE CODE:</p>
+    <input type="text" id="codeInput" placeholder="**********">
+    <br>
+    <button onclick="submitCode()">SUBMIT</button>
+    <p id="status">ACCESS DENIED</p>
+  </div>
+
+  <div class="hidden-clue" id="clone_hint">He always laughed at memes during raids...</div>
+  <div class="hidden-clue" id="secret-message"></div>
+
+  <script src="./js/pages/index.js"></script>
+</body>
+</html>

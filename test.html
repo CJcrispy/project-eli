@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eli Surveillance Terminal v3.4</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #111;
+      color: #f00;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.5em;
+      border-bottom: 2px solid #0f0;
+    }
+
+    #main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      height: 90vh;
+    }
+
+    #leftPanel {
+      padding: 10px;
+      border-right: 1px solid #0f0;
+    }
+
+    #rightPanel {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .folder {
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #0ff;
+    }
+
+    .folder.locked {
+      color: #f00;
+      text-decoration: line-through;
+      cursor: not-allowed;
+    }
+
+    .terminal-window {
+      background-color: #111;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #0f0;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      background: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 5px;
+      width: 100%;
+    }
+
+    .cam-feed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .cam {
+      width: 120px;
+      height: 90px;
+      background-color: #222;
+      border: 1px solid #0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8em;
+      position: relative;
+    }
+
+    .cam::after {
+      content: "⚠";
+      position: absolute;
+      top: 2px;
+      right: 4px;
+      color: red;
+      font-size: 0.8em;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    canvas#matrix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+
+    @keyframes glitch {
+        0%, 100% { background-color: black; }
+        50% { background-color: red; }
+    }
+
+    .lockdown {
+        animation: glitch 0.1s infinite;
+    }
+
+
+  </style>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+
+    <header>
+        Eli Surveillance Terminal v3.4 (REDACTED)
+    </header>
+
+    <div id="main">
+        <div id="leftPanel">
+        <h3>[FOLDERS]</h3>
+        <div class="folder" onclick="revealLogs()">📂 Logs</div>
+        <div class="folder" onclick="revealClones()">📂 Clones</div>
+        <div class="folder locked" onclick="revealUnity()">📂 Operation UNITY (LOCKED)</div>
+        <div class="folder" onclick="playAudio()">📂 Audio (corrupted)</div>
+
+        <div class="cam-feed">
+            <div class="cam">CAM 01</div>
+            <div class="cam">CAM 02</div>
+            <div class="cam">CAM 03</div>
+            <div class="cam">CAM 04</div>
+        </div>
+        </div>
+
+        <div id="rightPanel">
+        <div class="terminal-window" id="terminalOutput">
+            > Welcome back, ELI.<br>
+            > Type `help` for available commands.<br>
+        </div>
+        <input type="text" id="commandInput" onkeydown="handleCommand(event)" placeholder="> █ Enter command...">
+        </div>
+    </div>
+
+    <!-- Placeholder content -->
+    <div id="logOutput" class="hidden">
+        [LOG FILE ACCESS GRANTED]<br><br>
+        [12:41:03] :: Initial clone sequence [#01] SUCCESSFUL.<br>
+        [12:42:50] :: Clone exhibited signs of memory bleed.<br>
+        [13:10:44] :: Clone began mimicking Discord messages of Host: JOE.<br>
+        [13:24:21] :: Subject "Joe" flagged for TERMINATION.<br>
+        [14:01:17] :: Failed attempt to isolate host file.<br>
+        [14:21:00] :: Unknown input detected...<br>
+        [14:21:05] :: ...they’re waking up.<br>
+      </div>
+      
+      <div id="cloneData" class="hidden">
+        [CLONE DIRECTORY: ELI-CLN01 through ELI-CLN05]<br><br>
+        > CLONE_01 – Stable – Deep mimicry enabled<br>
+        > CLONE_02 – Unstable – Discarded<br>
+        > CLONE_03 – [DATA CORRUPTED] – Last seen in #memes<br>
+        > CLONE_04 – Active – Monitoring “quinnknight”<br>
+        > CLONE_05 – Dormant – Activation pending terminal trigger...<br>
+      </div>
+      
+    <audio id="corruptedAudio" src="audio/corrupted_clip.mp3"></audio>
+
+    <script>
+        const terminal = document.getElementById('terminalOutput');
+
+        function appendToTerminal(text) {
+            terminal.innerHTML += `<br>> ${text}`;
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function triggerLockdownGlitch() {
+            document.body.classList.add("lockdown");
+            appendToTerminal("⚠ SYSTEM LOCKDOWN INITIATED...");
+            setTimeout(() => {
+                appendToTerminal("...clearing memory...");
+                document.body.classList.remove("lockdown");
+                appendToTerminal("Lockdown lifted. Unauthorized attempt logged.");
+            }, 5000);
+        }
+
+
+        let unlockedUnity = false;
+
+        function handleCommand(e) {
+            if (e.key === "Enter") {
+                const cmd = e.target.value.trim().toLowerCase();
+                e.target.value = '';
+                appendToTerminal(cmd);
+
+                if (cmd === "unlock unity" || localStorage.getItem("unity_key") === "granted") {
+                unlockedUnity = true;
+                document.querySelector(".folder.locked").classList.remove("locked");
+                appendToTerminal("UNITY folder unlocked.");
+                localStorage.setItem("unity_key", "granted");
+                return;
+                }
+
+                switch (cmd) {
+                case "help":
+                    appendToTerminal("Available: logs, clones, unlock, unity, hint, joe, eli, override, version");
+                    break;
+                case "logs":
+                    appendToTerminal(document.getElementById('logOutput').textContent);
+                    break;
+                case "clones":
+                    appendToTerminal(document.getElementById('cloneData').textContent);
+                    break;
+                case "unity":
+                    if (unlockedUnity) {
+                    appendToTerminal(">> UNITY ACTIVITY THREAD LOADED:\n> Operation: Assimilate All Threads");
+                    } else {
+                    appendToTerminal("ACCESS RESTRICTED. Try `unlock unity`.");
+                    }
+                    break;
+                case "joe":
+                    appendToTerminal("☠️ WARNING: All Joes must be eradicated. Priority Level: OMEGA.");
+                    break;
+                case "eli":
+                    appendToTerminal("ELI - Status: UNKNOWN. Trace attempts: FAILED.");
+                    break;
+                case "override":
+                    triggerLockdownGlitch();
+                    break;
+                case "version":
+                    appendToTerminal("Eli Terminal v3.4-Beta // Build: 0420 // Kernel Patch: CHAOS");
+                    break;
+                case "hint":
+                    appendToTerminal("Try checking the source code. Look for Unity...");
+                    break;
+                default:
+                    appendToTerminal("Unknown command.");
+                }
+            }
+        }
+
+
+        function revealLogs() {
+            appendToTerminal("Accessing logs...");
+            appendToTerminal(document.getElementById('logOutput').textContent);
+        }
+
+        function revealClones() {
+            appendToTerminal("Accessing clone directory...");
+            appendToTerminal(document.getElementById('cloneData').textContent);
+        }
+
+        function playAudio() {
+            appendToTerminal("Attempting to play corrupted audio...");
+            document.getElementById('corruptedAudio').play();
+        }
+
+        function revealUnity() {
+            if (unlockedUnity || localStorage.getItem("unity_key") === "granted") {
+                appendToTerminal(">> UNITY ACTIVITY THREAD LOADED:\n> Operation: Assimilate All Threads");
+            } else {
+                appendToTerminal("ACCESS DENIED - UNITY folder requires override key.");
+            }
+        }
+
+
+        // Console hint
+        console.log("🧠 You found me again. Try: document.body.setAttribute('data-access', 'unity_clearance')");
+        console.log("🧪 Dev Note: Type `localStorage.setItem('unity_key', 'granted')` to bypass terminal command.");
+
+
+        // Matrix code rain
+        const canvas = document.getElementById("matrix");
+        const ctx = canvas.getContext("2d");
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        const letters = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチッヂヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワン";
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(1);
+
+        function drawMatrix() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#0f0";
+        ctx.font = fontSize + "px monospace";
+
+        drops.forEach((y, i) => {
+            const text = letters.charAt(Math.floor(Math.random() * letters.length));
+            const x = i * fontSize;
+            ctx.fillText(text, x, y * fontSize);
+
+            if (y * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+            }
+            drops[i]++;
+        });
+        }
+
+        setInterval(drawMatrix, 35);
+    </script>
+</body>
+</html>
