@@ -15,11 +15,14 @@ fetch('../logs/clones.json')
         card.className = "clone-card";
         card.innerText = clone.name;
 
-        // Check if we should show Dr. Hajile's card in the Eli section
-        if (category === "Eli" && clone.name === "Dr. Hajile" && sessionStorage.getItem("eliRevealed") === "true") {
-          card.classList.remove("hidden"); // Ensure the card is visible
-        } else if (category !== "Eli" || (category === "Eli" && sessionStorage.getItem("eliRevealed") !== "true")) {
-          card.classList.add("hidden"); // Hide Eli's section until revealed
+        // Always hide Dr. Hajile unless eliRevealed is "true"
+        if (category === "Eli" && clone.name === "Dr. Hajile") {
+          const eliRevealed = sessionStorage.getItem("eliRevealed");
+          
+          if (!eliRevealed || eliRevealed !== "true") {
+            section.classList.add("hidden");
+            card.classList.add("hidden"); // Hide if not set or not "true"
+          }
         }
 
         card.onclick = () => {
