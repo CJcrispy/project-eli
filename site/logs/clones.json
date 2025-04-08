@@ -1,0 +1,98 @@
+{
+    "Eli": [
+        {
+          "name": "Dr. Hajile",
+          "status": "Active",
+          "description": "The Supreme Architect of Shadows, the mastermind who transcends all notions of human limitations, and Eli’s most perfected creation. With intellect rivaling the greatest minds of history and an unyielding ambition to reshape the fabric of reality itself, Dr. Hajile stands as the cornerstone of Eli's insidious plans. Created in the deepest recesses of the most classified labs, Dr. Hajile is more than just a clone—he is Eli's unholy fusion of science and sorcery, a being capable of bending both time and space to his will. An enigma wrapped in mystery, Dr. Hajile’s very presence sends ripples through the fabric of existence, as if the universe itself trembles at the thought of his awakening. His knowledge of the secret arts of cloning, genetics, and manipulation of dimensional portals makes him an invaluable asset to Eli’s quest for world domination. Unbeknownst to even the highest echelons of Eli’s most loyal followers, Dr. Hajile holds the key to unlocking a new order of existence, a realm where Eli’s rule is absolute and unchallenged. Dr. Hajile’s goals are shrouded in secrecy, his motives far darker than mere conquest. Whispers suggest that he is not merely a clone, but something more—a creation that possesses a mind of its own, capable of overthrowing even Eli if the circumstances are right. His involvement in Operation: Joe Island is but the first chapter in a long and twisted tale of betrayal, manipulation, and ruthless ambition. As the player uncovers the truth behind his creation and his true purpose, they will realize that Dr. Hajile is not just a figurehead in Eli's army—he is the harbinger of a new world, one that is yet to be revealed in its full, terrifying glory"
+}
+    ],
+    "Joe": [
+      {
+        "name": "Joe Prime",
+        "status": "Decommissioned (wouldn’t stop talking)",
+        "description": "Created as a distraction unit, this Joe never ceased speaking. Within 48 hours of activation, caused two mental breakdowns in the lab and a minor rupture in Eli’s patience..."
+      },
+      {
+        "name": "The Card King",
+        "status": "ACTIVE – On Permanent Vacation at Joe Island",
+        "description": "Joe, the undisputed champion of card games, has beaten Eli in nearly every match they've ever played — much to Eli's dismay. The driving force behind Joe Island, Joe seeks to create a utopia for gamers, free from the rules of reality and the constraints of social expectations. As a card game prodigy, Joe often plays with strange decks no one has ever seen before, leading to rumors that he might be manipulating fate itself. His cardboard cutout, often seen at various locations on Joe Island, has somehow become an icon — attracting women with an inexplicable magnetism. Some even say the cutout has more charisma than the real Joe. When Eli wasn't looking, Joe left a cryptic note on the cutout's base: 'THE CARD TO PLAY IS ALWAYS IN YOUR HAND... but only if you hold it close.'"
+      }
+    ],
+    "Evil Joe": [
+      {
+        "name": "The Underdog",
+        "status": "UNKNOWN",
+        "description": "Evil Joe, unlike his counterpart, is not a conqueror — at least, not in the traditional sense. Having failed to become **Elden Lord** in the unforgiving world of **Elden Ring**, he now spends his days sinking into the depths of despair while clinging to his one true addiction: the **One Piece Trading Card Game**. His obsession with collecting rare cards from the series has taken over much of his life, much to the confusion of his wife. He finds solace in his cards, yet yearns for a victory that never comes. When asked about his failure in **Elden Ring**, he mutters only: 'The true power lies in **One Piece**. I was never meant to sit on a throne — I'm meant to collect... cards.'"
+      }
+    ],
+    "Quinn": [
+        {
+            "name": "Project Zillabyte",
+            "status": "ACTIVE",
+            "description": "Born from a corrupted VHS copy of 'Godzilla vs. Mechagodzilla II' and an old graphics card, Project Zillabyte is Eli's sole attempt to synthesize raw kaiju fandom into digital power. The clone speaks exclusively in 90s monster movie quotes and refuses to wear shoes. While initially designed as a failed mascot for 'Operation Roar,' Zillabyte proved valuable after developing the ability to detect anomalies in the simulation. Before he was relocated, he scrawled a message on the break room wall: 'THE DOOR OPENS WHEN THE MONSTER SLEEPS... input: awaken'. Investigate that."
+        }
+    ],
+    "Chris": [
+        {
+            "name": "Dean Ignoramus",
+            "status": "ACTIVE",
+            "description": "The original clone and self-proclaimed “Pioneer of Post-Truth Academia,” Dean Ignoramus is both revered and feared. Under his leadership, Ignorant University has flourished into a bureaucratic monstrosity, issuing degrees in disciplines such as Quantum Gaslighting, Lawful Evil Studies, and Culinary Misinformation. He insists all students major in “Whatever Feels Right.” Some suspect the dean may be laundering Eli’s world domination funds through suspicious tuition hikes and vending machine microtransactions."
+        },
+        {
+            "name": "The Clause Bender",
+            "status": "ACTIVE",
+            "description": "This clone is Eli’s personal legal juggernaut, capable of weaponizing fine print like a katana. He once won a court case using a Magic 8-Ball and the phrase “Objection, your Honor, vibes.” His specialty lies in retroactively making everything legal after it’s already been done. Many of Eli’s more controversial clone protocols bear Chris Esq.’s signature in invisible ink. Rumors say he holds a contingency clause that would grant him full control if Eli ever “pulls a Joe.”"
+        }
+    ],
+    "James": [
+        {
+            "name": "James-X",
+            "status": "Unknown – Elite Tier",
+            "description": "Considered the best of the best. Hand-picked DNA enhanced with tactical, social, and computational upgrades. Deployed only in the most critical ops. Rumors claim he once defeated a logic bomb using charisma alone. Current location: [REDACTED]."
+        },
+        {
+            "name": "Wallfather",
+            "status": "IDLE",
+            "description": "A clone that has evolved beyond the need to build walls—he is the wall. Towering at 9 feet and made entirely of an indestructible protein polymer derived from mayonnaise DNA, The Wallfather is summoned whenever base defense has reached DEFCON levels. His catchphrase: “They shall not pass, unless they’re bringing snacks.” Despite his stoic nature, he has an emotional subplot involving a pet raccoon named Mana."
+        },
+        {
+            "name": "Assimus Maximus",
+            "status": "CONTAINED",
+            "description": "A forbidden prototype the lab swore never to speak of again, Assimus Maximus was born from an unholy pact between raw hunger and dark eldritch lust. Though banned in 49 Discord servers, he remains active through VPNs and cursed mirrors. Wields a double-bladed tongue and speaks exclusively in reversed Magic: The Gathering card names. His existence challenges both morality and the digestive system."
+        },
+        {
+            "name": "Mayoglyph",
+            "status": "ROGUE",
+            "description": "A necromancer clone that sacrificed flavor for power, Mayoglyph gained immortality by infusing his soul into a cursed jar of Hellmann’s. He spreads corruption (and mayo) through arcane sandwich rituals. Legends say any grilled cheese made in his presence becomes a sentient being, doomed to eternally ask for more pickles. Often misquotes Magic lore in order to summon spirits of side dishes past."
+        }
+    ],
+    "Emilio": [
+        {
+            "name": "The Medic",
+            "status": "ACTIVE",
+            "description": "Emilio, the steadfast **group medic**, is a calming presence amid the chaos. With his **EMT training** and quick thinking, he is the linchpin of the group, capable of saving lives and keeping everyone in fighting form. A man of few words, Emilio is highly respected, especially when it comes to keeping the **Joes** in line. His rare skill to command respect from even the wildest of personalities is not just through his medical expertise — it’s his ability to remain cool-headed and assertive in any situation. If things ever spiral out of control, Emilio is the one who can bring all **Joes** to heel with a mere glance or a command. He is the silent guardian, the healer, and most importantly, an irreplaceable asset to Eli’s plans. While he may not be a part of Eli’s inner circle of chaos, Emilio knows that his duty is to protect the group at all costs. His loyalty is unwavering, but should the need arise, his hands are quick and capable of ensuring order is restored — no matter the cost."
+        }
+    ],
+    "Nicky": [
+        {
+            "name": "The Iron Throat Leader",
+            "status": "ACTIVE",
+            "description": "Nicky is the **charismatic, promiscuous** member of the crew, and his confidence is unmatched. **Gay** and proud, he made a brief joke once claiming he was straight, which immediately became a group running gag. Nicky leads the notorious **League of Iron Throat Havers**, a group of streetwalkers who take pride in their unique... talents. His sharp wit and bold nature make him a force to be reckoned with, and his **sexual prowess** is legendary — it’s rumored he sucked dick on the first date with nearly everyone he’s been with. As much as he revels in his own chaotic existence, Nicky also knows when to play things serious, especially when the group is in danger or needs guidance. His reputation and his **unapologetic attitude** give him a certain authority, and he’s not afraid to flaunt it. He might not be a part of Eli’s most sinister plans, but his unfiltered way of living adds an unpredictable spark to the group dynamic, one that can turn the tide in moments of need. Don’t let his flippant exterior fool you — Nicky has connections and influence that others underestimate, and his dedication to the League is nothing short of fierce."
+        }
+    ],
+    "Shayne": [
+        {
+            "name": "The Oblivious Provider",
+            "status": "ACTIVE – Always Present for Food",
+            "description": "Shayne is the classic **oblivious** member of the group — she’s often lost in her own world, unaware of the chaos around her. But don’t let her cluelessness fool you; Shayne has an uncanny ability to show up **just in time** when food or alcohol is involved. Whether it’s a late-night snack or an impromptu feast, Shayne is always first on the scene. She runs a **liquor store** with her dad, where she is known for her laid-back attitude and her love for stocking up on rare and exotic spirits. Despite being a bit **spacey**, she’s a reliable presence when it comes to taking care of the group’s needs. Often described as **‘high yellow’**, a term used to reference her striking mix of calm confidence and **light-hearted confusion**, Shayne brings a unique energy to the crew. While she might not always know what’s going on, she’s **always there** when it matters most — especially when a **good drink or meal** is involved. Shayne’s carefree nature and willingness to support her friends with whatever they need make her a surprisingly solid part of the team, even if she’s not always the one leading the charge."
+        }
+    ],
+    "Jeremy": [
+        {
+            "name": "Dominican Dynamo",
+            "status": "MIA – Last Seen Before the Dominican Purge",
+            "description": "Jeremy is the **Dominican** friend who once sparked the infamous **Torta Wars**, a series of food-related confrontations that escalated into chaos and led to the **Dominican Purge** — a dark chapter in the group’s history. He may have moved away, but his legacy lingers on, and his absence is still felt, especially by Eli, who **misses him dearly**. Jeremy was a master of instigating playful but chaotic debates, most notably about **tortas**, which eventually spiraled into something far greater. His personality was magnetic, always pushing boundaries and getting people to engage in the wildest of challenges, whether about food or more absurd topics. His unpredictable nature made him both a **maverick** and a **wildcard** among the group, but his absence has left a void. Despite the chaos he left behind, there’s a **sense of nostalgia** whenever his name is mentioned, with Eli often reminiscing about the days before the Purge. Jeremy’s clone, however, may still harbor remnants of the unpredictable energy he once brought to the group — ready to stir things up when least expected."
+          }
+    ]
+  }
+  

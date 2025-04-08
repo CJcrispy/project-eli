@@ -57,6 +57,42 @@ button {
     color: #111;
 }
 
+#click-zone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    z-index: 5;
+    cursor: pointer;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 0.65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: pre-wrap;
+    overflow: hidden;
+    padding: 4px;
+    user-select: none;
+  }
+  
+  
+#click-zone::after {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 0;
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 0.75rem;
+    white-space: pre;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+  
+
 @keyframes shake {
     0% { transform: translate(1px, 1px); }
     20% { transform: translate(-2px, 0px); }
@@ -65,6 +101,7 @@ button {
     80% { transform: translate(-1px, 1px); }
     100% { transform: translate(1px, 0px); }
 }
+
 
 @media screen and (max-width: 480px) {
 .intro {

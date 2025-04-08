@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eli's Office</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/terminal.css" />
 </head>
 <body>
@@ -14,55 +15,80 @@
 
     <div id="main">
         <div id="leftPanel">
-        <h3>[FOLDERS]</h3>
-        <div class="folder" onclick="revealLogs()">📂 Logs</div>
-        <div class="folder" onclick="revealClones()">📂 Clones</div>
-        <div class="folder locked" onclick="revealUnity()">📂 Operation UNITY (LOCKED)</div>
-        <div class="folder" onclick="playAudio()">📂 Audio (corrupted)</div>
+            <h3>[FOLDERS]</h3>
+            <div class="folder" onclick="revealLogs()">📂 Logs</div>
+            <!-- Hidden Log Files -->
+            <div id="logBookOfE" class="folder hidden" onclick="openLog('bookOfE')">📄 Book of E</div>
+            <div id="logTrap" class="folder hidden" onclick="openLog('trapSupremacy')">📄 Trap Supremacy</div>
+            <div id="logManifesto" class="folder hidden" onclick="openLog('manifesto')">📄 Eli Manifesto</div>
+            <div id="logRedacted" class="folder hidden" onclick="openLog('redacted')">📄 [REDACTED]</div>
 
-        <div class="cam-feed">
-            <div class="cam">CAM 01</div>
-            <div class="cam">CAM 02</div>
-            <div class="cam">CAM 03</div>
-            <div class="cam">CAM 04</div>
-        </div>
+            <div class="folder" onclick="revealClones()">📂 Clones</div>
+
+            <div id="classifiedFolder" class="folder hidden" style="display:none;" onclick="revealClassified()">📂 Classified</div>
+            <!-- Hidden files to be revealed -->
+            <div id="logClassified" class="folder hidden" >
+                <a href="../logs/james_protocol_final.txt" download class="file-link">james_protocol_final.txt</a>
+
+            </div>
+            <div id="logSecret" class="folder hidden" >
+                <a href="../logs/secret_plan_X.pdf" download class="file-link">secret_plan_X.pdf</a>
+            </div>
+            <div id="logReport" class="folder hidden" >
+                <a href="../logs/operation_unity_report.txt" download class="file-link">operation_unity_report.txt</a> 
+            </div>
+            
+            <div class="folder locked" onclick="revealUnity()">📂 Operation UNITY (LOCKED)</div>
+
+            <!-- Hidden folder to be revealed -->
+            <div id="joeFiles" class="folder hidden locked" onclick="revealJoeFiles()">📂 Operation: JOE ISLAND (LOCKED)</div>
+            <!-- Hidden files to be revealed -->
+            <div id="logJoeSecret" class="folder hidden" >
+                <a href="../logs/joe_island.txt" download class="file-link">joe_island.txt</a>
+
+            </div>
+            <div id="logEliClone" class="folder hidden" >
+                <a href="../logs/propaganda.txt" download class="file-link" onclick="revealEli()">propaganda.txt</a>
+            </div>
+            <div id="logSpicyReport" class="folder hidden" >
+                <a href="../logs/ojoe_secrets.txt" download class="file-link">ojoe_secrets.txt</a> 
+            </div>
+
+
+            <!-- <div class="cam-feed">
+                <div class="cam">CAM 01</div>
+                <div class="cam">CAM 02</div>
+                <div class="cam">CAM 03</div>
+                <div class="cam">CAM 04</div>
+            </div> -->
         </div>
 
         <div id="rightPanel">
-        <div class="terminal-window" id="terminalOutput">
-            > Welcome back, ELI.<br>
-            > Type `help` for available commands.<br>
-        </div>
+            <div class="terminal-window" id="terminalOutput">
+                > Welcome back, ELI.<br>
+                > Type `help` for available commands.<br>
+            </div>
         <input type="text" id="commandInput" onkeydown="handleCommand(event)" placeholder="> █ Enter command...">
         </div>
     </div>
 
     <!-- Placeholder content -->
     <div id="logOutput" class="hidden">
-        [LOG FILE ACCESS GRANTED]<br />
-        [12:41:03] :: Initial clone sequence [#01] SUCCESSFUL.<br />
-        [12:42:50] :: Clone exhibited signs of memory bleed.<br>
-        [13:10:44] :: Clone began mimicking Discord messages of Host: JOE.<br>
-        [13:24:21] :: Subject "Joe" flagged for TERMINATION.<br>
-        [14:01:17] :: Failed attempt to isolate host file.<br>
-        [14:21:00] :: Unknown input detected...<br>
-        [14:21:05] :: ...they’re waking up.<br>
+        
     </div>
       
     <div id="cloneData" class="hidden">
-        [CLONE DIRECTORY: ELI-CLN01 through ELI-CLN05]<br><br>
-        > CLONE_01 – Stable – Deep mimicry enabled<br>
-        > CLONE_02 – Unstable – Discarded<br>
-        > CLONE_03 – [DATA CORRUPTED] – Last seen in #memes<br>
-        > CLONE_04 – Active – Monitoring “quinnknight”<br>
-        > CLONE_05 – Dormant – Activation pending terminal trigger...<br>
+
     </div>
       
-    <audio id="corruptedAudio" src="audio/corrupted_clip.mp3"></audio>
-
-
-    </div>
     <script src="../js/pages/eli-office.js"></script>
+    <script src="../js/pages/redacted-handler.js"></script>
+    <script>
+        window.addEventListener("beforeunload", () => {
+            sessionStorage.removeItem("auth_granted");
+            sessionStorage.removeItem("auth_expires");
+        });
+    </script>
 
 </body>
 </html>

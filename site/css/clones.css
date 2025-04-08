@@ -1,0 +1,107 @@
+body {
+    background-color: #0d0d0d;
+    color: #00ff99;
+    font-family: 'Courier New', monospace;
+  }
+
+  h1, h2 {
+    color: #00ffcc;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .category h3 {
+    color: #66ffcc;
+    margin-top: 1rem;
+  }
+
+  .clone-card {
+    background-color: #1a1a1a;
+    border: 1px solid #00ff99;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    min-width: 120px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+  }
+
+  .clone-card:hover {
+    background-color: #002f1f;
+    box-shadow: 0 0 10px #00ff99;
+  }
+
+  .info-panel {
+    background-color: #121212;
+    border: 1px dashed #33ffcc;
+    padding: 1rem;
+    min-height: 200px;
+    color: #00ffff;
+  }
+
+  .carousel-wrapper {
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  ::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #00ffaa;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #111;
+  }
+
+/* Style for the encrypted text by default */
+.decryptable-text {
+    font-family: monospace;
+    color: #aaa;  /* Encrypted text color (gray for encryption) */
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  
+  /* Style when decrypted (close enough to the mouse) */
+  .decryptable-text.decrypted {
+    color: #fff;  /* Decrypted text color (white) */
+  }
+  
+  /* Style for the hover effect (hover close to the text for decryption) */
+  .decryptable-text:hover {
+    cursor: pointer;
+    color: #fff;  /* Change color when mouse is close (decrypted state) */
+  }
+  
+  /* Optionally, add a subtle background to the decryptable text */
+  .decryptable-text {
+    background-color: rgba(0, 0, 0, 0.1); /* Light background to indicate that it's interactable */
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Style for mouse "circle" effect to guide decryption */
+  .js-circle {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    pointer-events: none;  /* Prevent interaction with the circle itself */
+    transition: all 0.1s ease-in-out;
+  }
+  
+  /* Optional: Add an animation or glow effect on hover to make it more interactive */
+  .decryptable-text:hover {
+    text-decoration: underline;
+    color: #0f0;  /* You can change this to a color of your choice */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  }
+  

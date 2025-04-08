@@ -1,0 +1,100 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT ELI FINALE</title>
+    <link rel="stylesheet" href="../css/finale.css">
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-frame">
+            <div class="terminal-header">
+                <div class="terminal-title">Dr. Hajile Terminal</div>
+                <div class="server-status">
+                    <span class="status-text">SERVER STATUS: </span>
+                    <span class="status-critical blink">CRITICAL</span>
+                </div>
+            </div>
+
+            <div class="game-container">
+                <div class="server-health-container">
+                    <div class="server-health-label">SERVER HEALTH</div>
+                    <div class="server-health-bar">
+                        <div class="health-fill"></div>
+                    </div>
+                    <div class="server-health-percentage">100%</div>
+                </div>
+
+                <div class="game-board-container">
+                    <div class="game-board">
+                        <div class="cell" data-index="0"></div>
+                        <div class="cell" data-index="1"></div>
+                        <div class="cell" data-index="2"></div>
+                        <div class="cell" data-index="3"></div>
+                        <div class="cell" data-index="4"></div>
+                        <div class="cell" data-index="5"></div>
+                        <div class="cell" data-index="6"></div>
+                        <div class="cell" data-index="7"></div>
+                        <div class="cell" data-index="8"></div>
+                    </div>
+
+                    <div class="game-status">
+                        <div class="status-message">SYSTEM ERROR: Protocol TIK-TAK breached. Win against Dr. Hajile to restore system.</div>
+                        <div class="round-info">
+                            <span class="round-label">ROUND:</span>
+                            <span class="round-number">1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ai-status-container">
+                    <div class="ai-portrait">
+                        <div class="ai-face"></div>
+                    </div>
+                    <div class="ai-status">
+                        <div class="ai-name">Dr. Hajile AI</div>
+                        <div class="ai-difficulty">
+                            <span class="difficulty-label">DIFFICULTY:</span>
+                            <span class="difficulty-level">LOW</span>
+                        </div>
+                        <div class="ai-message">Initializing game protocol...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="terminal-footer">
+                <div class="system-logs">
+                    <div class="log-entry">System boot sequence initiated...</div>
+                    <div class="log-entry">Error detected in mainframe...</div>
+                    <div class="log-entry">Dr. Hajile AI has taken control of server...</div>
+                    <div class="log-entry">Challenge Dr. Hajile to regain system control...</div>
+                </div>
+
+                <div class="control-panel">
+                    <button class="control-button reset-button">RESET ROUND</button>
+                    <button class="control-button new-game-button">NEW GAME</button>
+                    <a href="https://example.com" class="control-button help-button" target="_blank">HELP</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-over-modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title win-title">SERVER RESTORED</div>
+                    <div class="modal-title lose-title">CATASTROPHIC FAILURE</div>
+                </div>
+                <div class="modal-body">
+                    <div class="win-message">You've successfully defeated Dr. Hajile AI and restored server functions! The system is now operational.</div>
+                    <div class="lose-message">Dr. Hajile AI has overwhelmed the server. All systems have failed. Emergency reboot required.</div>
+                </div>
+                <div class="modal-footer">
+                    <a href="end.html" class="modal-button restart-button">END</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/pages/finale.js"></script>
+</body>
+</html>
