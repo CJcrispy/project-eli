@@ -1,7 +1,7 @@
 // Console Easter Egg
 console.log("%cYou’re not supposed to be here...", "color: red; font-size: 16px;");
-console.log("Try typing: clearanceCode = 'loudboi'; then refresh the page.");
-console.log("OR look deeper into the network logs...");
+console.log("Try searching every corner of this site");
+console.log("you'll get in");
 
 let hexcode = "64 65 67 65 6e 65 72 61 63 79";
 let correctCode = 'degeneracy';
