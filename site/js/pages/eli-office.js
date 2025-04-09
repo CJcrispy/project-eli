@@ -335,14 +335,14 @@ function handleResponse(response) {
     if (response === "yes") {
         terminal.innerHTML += "\n[SYSTEM] You have chosen to join Eli's plans. Welcome to the new world order.";
         // Redirect to the "join" ending or next part of the game
-        window.location.href = "join.html"; // Example page
+        window.location.href = "finale.html"; // Example page
     } else if (response === "no") {
         terminal.innerHTML += "\n[SYSTEM] You have chosen to oppose Eli's plans. Prepare for resistance.";
         // Redirect to the "resist" ending or next part of the game
-        window.location.href = "resist.html"; // Example page
+        window.location.href = "finale.html"; // Example page
     } else if (response === "resist") {
         terminal.innerHTML += "\n[SYSTEM] You have resisted Eli's offer. The battle begins now.";
         // Redirect to a "resist" page or game logic where the player resists
-        window.location.href = "resist.html"; // Example page
+        window.location.href = "finale.html"; // Example page
     }
 }
